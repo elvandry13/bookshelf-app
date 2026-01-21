@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Raleway, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #3062e2;
+    padding: 4px;
+    color: white;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section {
+    width: 700px;
+    border-radius: 8px;
+    border: 2px solid #3062e2;
+    margin: 16px;
+    background: #F8F9FA;
+    padding: 16px;
+    flex-grow: 1;
+    height: fit-content;
+}
+
+h2 {
+    text-align: center;
+    color: #3062e2;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+}
+
+.form-group label {
+    margin-bottom: 4px;
+    color: #3062e2;
+}
+
+.form-group input[type=text], input[type=number] {
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#check-iscomplete {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#bookFormSubmit {
+    border-radius: 16px;
+    padding: 12px 24px;
+    border: 2px solid #3062e2;
+    background-color: #3062e2;
+    color: white;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+#editBookSubmit {
+    border-radius: 16px;
+    padding: 12px 24px;
+    border: 2px solid orange;
+    background-color: orange;
+    color: white;
+    margin-top: auto;
+    cursor: pointer;
+    display: none;
+}
+
+#cancelEditBookSubmit {
+    border-radius: 16px;
+    padding: 12px 24px;
+    border: 2px solid red;
+    background-color: red;
+    color: white;
+    margin-top: 8px;
+    cursor: pointer;
+    display: none;
+}
+
+#searchBook {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+#searchBook label {
+    flex-grow: 0;
+    color: #3062e2;
+}
+
+#searchBook input {
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#searchBook button {
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid #3062e2;
+    background-color: #3062e2;
+    color: white;
+    cursor: pointer;
+}
+
+[data-testid="bookItem"] {
+    border-radius: 16px;
+    border: 2px solid #3062e2;
+    margin-top: 16px;
+    padding: 12px 24px 12px 24px;
+    background: white;
+}
+
+[data-testid="bookItemIsCompleteButton"] {
+    border-radius: 8px;
+    padding: 8px;
+    margin: 4px;
+    border: 1px solid green;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+[data-testid="bookItemDeleteButton"] {
+    border-radius: 8px;
+    padding: 8px;
+    margin: 4px;
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+[data-testid="bookItemEditButton"] {
+    border-radius: 8px;
+    padding: 8px;
+    margin: 4px;
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
