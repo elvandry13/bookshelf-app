@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function generateId() {
-    return +new Date();
+    return Number(new Date());
   }
 
   function generateBookObject(id, title, author, year, isCompleted) {
