@@ -49,13 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
     return Number(new Date());
   }
 
-  function generateBookObject(id, title, author, year, isCompleted) {
+  function generateBookObject(id, title, author, year, isComplete) {
     return {
       id,
       title,
       author,
       year,
-      isCompleted,
+      isComplete,
     };
   }
 
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function moveBook(bookId, isComplete) {
     const bookTarget = findBookById(bookId);
     if (bookTarget == null) return;
-    bookTarget.isCompleted = isComplete;
+    bookTarget.isComplete = isComplete;
     filteredBooks = null;
     document.dispatchEvent(new Event(RENDER_EVENT));
     saveData();
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bookYear.value = prevBook.year;
 
     const isCompleteCheckbox = document.getElementById("bookFormIsComplete");
-    isCompleteCheckbox.checked = prevBook.isCompleted;
+    isCompleteCheckbox.checked = prevBook.isComplete;
 
     document.getElementById("bookFormSubmit").style.display = "none";
     document.getElementById("editBookSubmit").style.display = "block";
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
     books[bookIndex].year = Number(
       document.getElementById("bookFormYear").value,
     );
-    books[bookIndex].isCompleted =
+    books[bookIndex].isComplete =
       document.getElementById("bookFormIsComplete").checked;
 
     filteredBooks = null;
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const completeButton = document.createElement("button");
     completeButton.setAttribute("data-testid", "bookItemIsCompleteButton");
-    if (bookObject.isCompleted) {
+    if (bookObject.isComplete) {
       completeButton.innerText = "Belum Selesai Dibaca";
       completeButton.style.border = "1px solid gray";
       completeButton.style.backgroundColor = "gray";
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
       completeButton.style.backgroundColor = "green";
     }
     completeButton.addEventListener("click", function () {
-      moveBook(bookObject.id, !bookObject.isCompleted);
+      moveBook(bookObject.id, !bookObject.isComplete);
     });
 
     const deleteButton = document.createElement("button");
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (const book of booksToRender) {
       const bookElement = makeBookElement(book);
-      if (!book.isCompleted) {
+      if (!book.isComplete) {
         incompleteBookList.append(bookElement);
       } else {
         completeBookList.append(bookElement);
